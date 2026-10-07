@@ -1,0 +1,222 @@
+/* Importação de fonte moderna do Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap'); */
+
+/* Reset e Variáveis de Cores */
+:root {
+  --cor-fundo-azul: rgb(44, 35, 207); 
+  --cor-card: #ffffff;
+  --cor-primaria: rgb(44, 35, 207);    
+  --cor-texto: #1f2937;
+  --cor-subtexto: #4b5563;
+  --cor-borda: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--cor-texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  /* Cria o fundo dividido verticalmente ao meio (Esquerda Azul, Direita Branco) */
+  background: linear-gradient(to right, var(--cor-fundo-azul) 50%, #f3f4f6 50%);
+}
+
+/* Cartão Principal */
+.Cartao {
+  background-color: var(--cor-card);
+  width: 100%;
+  max-width: 700px; /* Um pouco mais largo para acomodar bem as duas colunas */
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Faixa e Foto */
+.Faixa {
+  height: 140px;
+  background: linear-gradient(135deg, var(--cor-fundo-azul), #ffffff);
+}
+
+.Topo {
+  text-align: center;
+  position: relative;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.Moldura {
+  margin-top: -70px;
+  margin-bottom: 12px;
+}
+
+.foto {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--cor-card);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.Nome {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+.Titulo {
+  font-size: 1rem;
+  color: var(--cor-subtexto);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Redes Sociais / Contato */
+.Contato {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.Contato a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--cor-fundo-azul);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Contato a:hover {
+  background-color: #1f2937;
+  transform: translateY(-3px);
+}
+
+/* Seções Internas */
+.setor {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.setor h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.setor p {
+  line-height: 1.6;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* Container das duas colunas de dados */
+.container-dados-divididos {
+  display: flex;
+  gap: 32px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--cor-borda);
+  background-color: #fafafa; /* Um leve fundo cinza para destacar os dados */
+}
+
+.coluna-dados {
+  flex: 1;
+}
+
+.coluna-dados h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coluna-dados p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--cor-subtexto);
+}
+
+.coluna-dados strong {
+  color: var(--cor-texto);
+}
+
+/* Tags de Habilidades */
+.lista-de-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lista {
+  background-color: #eef2ff;
+  color: var(--cor-primaria);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #e0e7ff;
+}
+
+/* Experiência */
+.item-experiencia {
+  margin-bottom: 20px;
+}
+
+.item-experiencia:last-child {
+  margin-bottom: 0;
+}
+
+.item-experiencia h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.empresa {
+  font-size: 0.85rem !important;
+  color: #6b7280 !important;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Rodapé */
+.rodape {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9fafb;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 680px) {
+  body {
+    background: #f3f4f6; /* Remove o fundo cortado no celular */
+  }
+  .container-dados-divididos {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
